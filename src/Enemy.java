@@ -1,10 +1,10 @@
-public class Hero {
+public class Enemy {
 	private String name;
 	private int hp;
 	private int attack;
 	
 	// コンストラクタ
-	public Hero(String name, int hp, int attack) {
+	public Enemy(String name, int hp, int attack) {
 		this.name = name;
 		this.hp = hp;
 		this.attack = attack;
