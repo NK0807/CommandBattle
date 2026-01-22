@@ -27,4 +27,12 @@ public class Enemy {
 	public int getAttack() {
 		return this.attack;
 	}
+	
+	public boolean isAlive() {
+		if(this.hp > 0) {
+			return true;
+		}else {
+			return false;	
+		}
+	}
 }
