@@ -27,4 +27,12 @@ public class Hero {
 	public int getAttack() {
 		return this.attack;
 	}
+	
+	public boolean isAlive() {
+		if(this.hp > 0) {
+			return true;
+		}else {
+			return false;	
+		}
+	}
 }
