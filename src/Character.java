@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class Character {
+public abstract class Character {
 	protected String name;
 	protected int hp;
 	protected int attack;
@@ -19,33 +19,9 @@ public class Character {
 		this.hp -= damage;
 	}
 	
-    // 攻撃する
-    public void attack(Character target){
-        // ダメージが-3～3ぶれる
-        int randDamage = rand.nextInt(7) - 3;
-        int finalDamage = this.attack + randDamage;
-
-        // ダメージがマイナスにならないようにする
-        if(finalDamage < 0){
-            finalDamage = 0;
-        }
-
-        // クリティカル判定
-        int randCritical = rand.nextInt(10);
-        if(randCritical == 0){
-            // 二倍ダメージ
-            finalDamage *= 2;
-        }
-
-        // ダメージを与える
-        target.damage(finalDamage);
-
-        System.out.println(this.name + "の攻撃");
-        if(randCritical == 0){
-            System.out.println("会心の一撃！！！");
-        }
-        System.out.println(target.name + "に" + finalDamage + "のダメージ");
-    }
+    // 攻撃する（抽象メソッド）
+    // ※抽象メソッドにする理由は、子がそれぞれattackの中身を考えるため
+    public abstract void attack(Character target);
 
 	// ゲッター
 	public String getName() {
