@@ -30,10 +30,20 @@ public class Character {
             finalDamage = 0;
         }
 
+        // クリティカル判定
+        int randCritical = rand.nextInt(10);
+        if(randCritical == 0){
+            // 二倍ダメージ
+            finalDamage *= 2;
+        }
+
         // ダメージを与える
         target.damage(finalDamage);
 
         System.out.println(this.name + "の攻撃");
+        if(randCritical == 0){
+            System.out.println("会心の一撃！！！");
+        }
         System.out.println(target.name + "に" + finalDamage + "のダメージ");
     }
 
