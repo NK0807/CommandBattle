@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class Character {
+public abstract class Character {
 	protected String name;
 	protected int hp;
 	protected int attack;
