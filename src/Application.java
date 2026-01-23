@@ -16,8 +16,7 @@ public class Application {
 			int select = conUI.heroTurn();
 			switch(select) {
 			case 1:
-				enemy.damage(hero.getAttack());
-				System.out.println(enemy.getName() + "に" + hero.getAttack() + "のダメージ！");
+				hero.attack(enemy);
 				if(enemy.getHp() <= 0) {
 					System.out.println(enemy.getName() + "を倒した！");
 					System.out.println("ゲーム終了");
@@ -32,8 +31,7 @@ public class Application {
 			
 			// 魔王のターン
 			System.out.println("【" + enemy.getName() + "】のターン");
-			hero.damage(enemy.getAttack());
-			System.out.println(hero.getName() + "に" + enemy.getAttack() + "のダメージ！");
+			enemy.attack(hero);
 			if(hero.getHp() <= 0) {
 				System.out.println(hero.getName() + "は倒れた…");
 				System.out.println("ゲーム終了");
